@@ -1,11 +1,11 @@
 
 import { ChefHat, Upload, DollarSign, Package, Utensils } from "lucide-react";
 import food from "../Data/data.json";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { addProduct } from "../redux/productSlice";
 const AdminForm = () => {
   const foodproducts = useSelector((state) => state.products);
-
+const dispatch= useDispatch()
   // function when the form submit
   const handleSubmit = (e) => {
     e.preventDefault();
