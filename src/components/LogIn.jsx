@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { login } from "../redux/slice";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-
+import Swal from "sweetalert2"
 const LogIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,12 +27,59 @@ const LogIn = () => {
 
     if (userName === "admin" && password === "12345") {
       dispatch(login({ userName, role: "admin" }));
+
+      // give message
+      const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  iconColor:'green',
+  theme:"dark",
+  icon: "success",
+  title: "Signed in successfully"
+});
       navigate("/admin");
+
     } else if (userName === "user" && password === "12345") {
       dispatch(login({ userName, role: "user" }));
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+Toast.fire({
+  iconColor:'green',
+  theme:"dark",
+  icon: "success",
+  title: "Signed in successfully"
+});
+
       navigate("/user");
     } else {
-      alert("invalid credential");
+      Swal.fire({
+        theme:"dark",
+  title: 'Error!',
+  text: 'Invalid Credenital',
+  icon: 'error',
+  iconColor:'red',
+  confirmButtonText: 'try again'
+})
+ e.target.reset();
+
     }
   };
 
