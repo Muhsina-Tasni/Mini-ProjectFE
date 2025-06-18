@@ -1,0 +1,10 @@
+
+@import "tailwindcss";
+@import "@fontsource/roboto";       /* Defaults to 400 weight */
+
+
+:root{
+   
+  font-family:'Roboto', sans-serif;
+}
+
