@@ -11,17 +11,19 @@ const UserDashboard = () => {
 const person = useSelector(state=>state.slice.user)
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-8">
-    {/* welcomre part and logout section */}
-      <div className="flex justify-between  m-10">
-        <div className="flex">
-          <HandHeart className="h-15 w-15 text-blue-400" />
-          <p className="text-4xl ml-5"> welcome ,{person.userName} </p>
-        </div>
+   
+<div className="flex  md:flex-row justify-between gap-4 m-6">
+  {/* Welcome Text */}
+  <div className="flex items-center">
+    <HandHeart className="h-10 w-10 text-blue-400" />
+    <p className="text-2xl sm:text-3xl md:text-4xl ml-4">Welcome, {person.userName}</p>
+  </div>
 
-        <div>
-          <Logout />
-        </div>
-      </div>
+  {/* Logout Button aligned right */}
+  <div className="self-end md:self-auto">
+    <Logout />
+  </div>
+</div>
 
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto bg-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10">

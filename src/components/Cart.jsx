@@ -56,7 +56,7 @@ const Cart = () => {
         </Link>
       </div>
 
-      <h1 className="text-4xl font-extrabold mb-10  text-center">Your Cart</h1>
+      <h1 className="text-4xl font-extrabold my-10  text-center">Your Cart</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* display the products of cart with map*/}
         {cart.map(({ id, image, name, category, price, quantity }) => (

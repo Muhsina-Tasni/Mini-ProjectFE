@@ -1,18 +1,16 @@
-// imported
+
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 import "/src/index.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
 const Navbar = () => {
   // for hamberger menu
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated, user } = useSelector((state) => state.slice);
   const navigate = useNavigate();
-
-  // created button for the login and navigate under the condition
+// created conditioned navigation by the click
   const handleClick = () => {
     if (isAuthenticated && user?.role === "admin") {
       navigate("/admin");
@@ -21,29 +19,35 @@ const Navbar = () => {
     } else {
       navigate("/login");
     }
-}
+  };
 
   return (
-    // navbar
     <>
-      <nav className="bg-gray-300 fixed w-full top-0 left-0   shadow-lg px-6 py-4  relative z-10">
+      <nav className="bg-gray-300 fixed w-full top-0 left-0 shadow-lg px-4 py-3 md:py-6 relative z-10">
         <div className="nav-container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2 text-3xl font-extrabold text-white-800 tracking-wide">
-            <span>The Great Indian Kitchen</span>
+          {/* Brand Logo and Name */}
+          <div className="flex items-center space-x-2 text-xl sm:text-2xl md:text-3xl font-extrabold text-white-800 tracking-wide whitespace-nowrap">
+            <img
+              src="../images/logo.png"
+              alt="The Great Indian Kitchen Logo"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            />
+            <span className="sm:inline text-black">The Great Indian Kitchen</span>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-8 text-black hover:font-extrabold  font-semibold">
+          <div className="hidden md:flex space-x-8 text-black font-semibold">
             <Link
-              to={"/"}
+              to="/"
               className="hover:text-blue-600 transition duration-300"
             >
               Home
             </Link>
             <button
-             onClick={handleClick} className="hover:text-blue-600 transition duration-300  cursor-pointer">
+              onClick={handleClick}
+              className="hover:text-blue-600 transition duration-300 cursor-pointer"
+            >
               Login
-            
             </button>
           </div>
 
@@ -83,30 +87,25 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`md:hidden flex flex-col gap-3 text-gray-800 font-semibold px-6 pb-4 pt-2 transition-all duration-300 ease-in-out ${
-            isOpen
-              ? "max-h-screen opacity-100"
-              : "max-h-0 overflow-hidden opacity-0"
+            isOpen ? "max-h-screen opacity-100" : "max-h-0 overflow-hidden opacity-0"
           }`}
         >
           <Link
-            to={"/"}
+            to="/"
             onClick={() => setIsOpen(false)}
             className="hover:text-blue-600 transition duration-300"
           >
             Home
           </Link>
-
-<button
-  onClick={() => {
-    setIsOpen(false);
-    handleClick();
-  }}
-  className="hover:text-blue-600 transition duration-300   text-left"
->
-  Login
-</button>
-
-
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              handleClick();
+            }}
+            className="hover:text-blue-600 transition duration-300 text-left"
+          >
+            Login
+          </button>
         </div>
       </nav>
 

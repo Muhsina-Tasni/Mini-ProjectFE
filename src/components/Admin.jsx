@@ -21,13 +21,14 @@ const Admin = () => {
 
       <div className="min-h-screen bg-gray-100">
         {/* welcome section */}
-        <div className="flex justify-between p-10 align-middle">
+        <div className="flex md:flex justify-between p-10 align-middle">
+          {/* <div> */}
           <div className="flex">
             <HandHeart className="h-15 w-15 text-blue-400" />
-            <p className="text-4xl ml-5"> welcome ,{person.userName} </p>
+            <p className="text-2xl sm:text-3xl md:text-4xl ml-4 sm:inline"> welcome ,{person.userName} </p>
           </div>
           {/* //logout button and show button*/}
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4 ml-auto items-end md:items-center ">
             <div>
               <Logout />
             </div>
@@ -42,6 +43,10 @@ const Admin = () => {
             </div>
           </div>
         </div>
+
+
+
+
 
         {/* Product List Section */}
         {showMenu && (

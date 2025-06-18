@@ -90,7 +90,7 @@ const Menu = () => {
         </div>
         {/* /////////////////on smaller screens dispaly like button */}
 
-        <div className="flex md:hidden overflow-x-auto gap-3 px-2 py-2   justify-center items-center mt-8">
+        <div className= "flex-col  md:flex  md:hidden overflow-x-auto gap-3 px-2 py-2   justify-center items-center mt-8">
           {categories.map((cat, idx) => (
             <button
               key={idx}
