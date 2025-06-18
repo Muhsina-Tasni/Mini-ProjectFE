@@ -31,7 +31,7 @@ const LogIn = () => {
       // give message
       const Toast = Swal.mixin({
   toast: true,
-  position: "top-end",
+  position: "center",
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
@@ -50,9 +50,10 @@ Toast.fire({
 
     } else if (userName === "user" && password === "12345") {
       dispatch(login({ userName, role: "user" }));
-const Toast = Swal.mixin({
+
+      const Toast = Swal.mixin({
   toast: true,
-  position: "top-end",
+  position: "center",
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
@@ -67,8 +68,8 @@ Toast.fire({
   icon: "success",
   title: "Signed in successfully"
 });
-
       navigate("/user");
+      
     } else {
       Swal.fire({
         theme:"dark",
@@ -79,7 +80,7 @@ Toast.fire({
   confirmButtonText: 'try again'
 })
  e.target.reset();
-
+ navigate("/login");
     }
   };
 
