@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-300 fixed w-full top-0 left-0 shadow-lg px-4 py-3 md:py-6 relative z-10">
+      <nav className="bg-gray-300 fixed w-full top-0 left-0 shadow-lg px-4 py-3 md:py-4 relative z-10">
         <div className="nav-container mx-auto flex items-center justify-between">
           {/* Brand Logo and Name */}
           <div className="flex items-center space-x-2 text-xl sm:text-2xl md:text-3xl font-extrabold text-white-800 tracking-wide whitespace-nowrap">
