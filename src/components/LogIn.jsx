@@ -31,7 +31,7 @@ const LogIn = () => {
       // give message
       const Toast = Swal.mixin({
   toast: true,
-  position: "center",
+  position: "top",
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
@@ -53,7 +53,7 @@ Toast.fire({
 
       const Toast = Swal.mixin({
   toast: true,
-  position: "center",
+  position: "top",
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
@@ -86,8 +86,8 @@ Toast.fire({
 
   return (
     <>
-      <div className="login-container flex justify-center items-center h-screen">
-        <div className="bg-[url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')] bg-cover bg-center rounded-lg flex justify-center items-center overflow-hidden w-full max-w-4xl py-15    ">
+      <div className="login-container flex justify-center items-center h-screen px-5">
+        <div className="bg-[url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')] bg-cover bg-center rounded-lg flex justify-center items-center overflow-hidden md:w-full  md:max-w-4xl md:py-15  p-5 ">
           {/* Left Side - Login Form */}
           <div className="w-full md:w-1/2  p-8 bg-black/70 rounded-lg text-white   ">
             <p className="mb-7">
