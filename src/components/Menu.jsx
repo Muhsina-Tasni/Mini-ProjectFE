@@ -12,7 +12,7 @@ const categories = [
   { name: "Our Special", image: "/images/img1.jpeg" },
   { name: "Pizza", image: "/images/img2.jpeg" },
   { name: "Salad", image: "/images/img3.jpeg" },
-  { name: "new", image: "/images/img3.jpeg" },
+  
 ];
 // animation from aos
 const Menu = () => {
@@ -23,6 +23,7 @@ const Menu = () => {
     });
   }, []);
   //  get food  products
+  
   const foodproducts = useSelector((state) => state.products);
   const [filteredProducts, setFilteredProducts] = useState([]);
   // to store search term
@@ -42,9 +43,7 @@ const Menu = () => {
       // to get all  products and new foodproducts
       const allCombined = [...products, ...foodproducts];
       setFilteredProducts(allCombined);
-      // categorize food products under the name  'new'
-    } else if (category === "new") {
-      setFilteredProducts(foodproducts);
+      // categorize food products under the name
     } else {
       const filtered = products.filter((item) => item.category === category);
       setFilteredProducts(filtered);
@@ -58,7 +57,7 @@ const Menu = () => {
 
         {/* Category Cards */}
         <div
-          className="   hidden md:grid sm:grid-cols-5 lg:grid-cols-5 place-items-center gap-6 mt-8 mb-5"
+          className=" hidden md:grid grid-cols-4 lg:grid-cols-4 place-items-center gap-4 mt-8 mb-5 px-4"
           // aos animation
           data-aos="fade-left"
           data-aos-delay="100"
@@ -88,14 +87,14 @@ const Menu = () => {
             </div>
           ))}
         </div>
-        {/* /////////////////on smaller screens dispaly like button */}
+        {/* //on smaller screens dispaly like button */}
 
-        <div className= "flex-col  md:flex  md:hidden overflow-x-auto gap-3 px-2 py-2   justify-center items-center mt-8">
+        <div className= "flex md:hidden overflow-x-auto gap-3 px-4 py-2   justify-center items-center mt-8">
           {categories.map((cat, idx) => (
             <button
               key={idx}
               onClick={() => handleViewAll(cat.name)}
-              className="whitespace-nowrap bg-blue-600 text-white px-4 py-1 rounded-full text-sm"
+              className="hover:bg-blue-800 cursor-pointer whitespace-nowrap bg-blue-600 text-white px-4 py-1 rounded-full text-sm hover:scale-105"
             >
               {cat.name}
             </button>

@@ -15,6 +15,7 @@ const cartSlice = createSlice({
       } else {
         state.push({ ...product, quantity: 1 });
       }
+       localStorage.setItem('cartitem', JSON.stringify(state));
     },
 // fpr remove from cart
     removeFromCart: (state, action) => {
@@ -29,8 +30,10 @@ const cartSlice = createSlice({
           state.splice(index, 1);
         }
       }
+       
     },
   clearCart: () => {
+   localStorage.removeItem('cartitem');
       return [];
     }
   },

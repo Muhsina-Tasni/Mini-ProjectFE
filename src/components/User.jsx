@@ -38,7 +38,7 @@ const person = useSelector(state=>state.slice.user)
           </p>
           <a href="#menusection">
           {/* <Link to="/menu"> */}
-            <button className="   cursor-pointer   bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 transition">
+            <button className="   cursor-pointer   bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 transition  hover:bg-blue-700 ">
               Explore Menu
             </button>
           {/* </Link> */}
@@ -64,7 +64,7 @@ const person = useSelector(state=>state.slice.user)
             Check out our most loved dishes by thousands of customers!
           </p>
           <Link to="/special">
-            <button className="mt-3 cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 text-white   px-4   text-smpx-4 py-2 rounded-full hover:bg-blue-600">
+            <button className="mt-3 cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 text-white   px-4   text-smpx-4 py-2 rounded-full hover:bg-blue-700  hover:scale-105 ">
               Our Special
             </button>
           </Link>
@@ -77,7 +77,7 @@ const person = useSelector(state=>state.slice.user)
             Ready to order? See what's in your cart and proceed to checkout.
           </p>
           <Link to="/cart">
-            <button className=" cursor-pointer mt-3 text-sm  bg-gradient-to-r from-blue-500 to-blue-600 text-white                   px-4 py-2 rounded-full hover:bg-blue-600">
+            <button className=" cursor-pointer mt-3 text-sm  bg-gradient-to-r from-blue-500 to-blue-600 text-white  hover:scale-105   px-4 py-2 rounded-full hover:bg-blue-700">
               Go to Cart
             </button>
           </Link>
@@ -92,7 +92,7 @@ const person = useSelector(state=>state.slice.user)
             See your previous orders and reorder your favorites.
           </p>
           <Link to="/cart">
-            <button className="mt-3  cursor-pointer  text-sm px-4 py-2 rounded-full  bg-gradient-to-r from-blue-500 to-blue-600 text-white      hover:bg-blue-600">
+            <button className="mt-3  cursor-pointer  text-sm px-4 py-2 rounded-full  bg-gradient-to-r from-blue-500 to-blue-600 text-white  hover:scale-105    hover:bg-blue-600">
               View Orders
             </button>
           </Link>

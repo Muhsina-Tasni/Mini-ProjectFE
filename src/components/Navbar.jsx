@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex align-middle justify-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-800 focus:outline-none transition-all"
@@ -86,7 +86,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden flex flex-col gap-3 text-gray-800 font-semibold px-6 pb-4 pt-2 transition-all duration-300 ease-in-out ${
+          className={`md:hidden flex align-middle  justify-center flex-col gap-3 text-gray-800 font-semibold px-6 transition-all duration-300 ease-in-out ${
             isOpen ? "max-h-screen opacity-100" : "max-h-0 overflow-hidden opacity-0"
           }`}
         >
